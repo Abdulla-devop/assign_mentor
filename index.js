@@ -2,12 +2,15 @@
 import express from 'express'
 import IndexRouter from './Routes/router.js'
 import { dbConnection } from './db.js'
-
-
-//Port
-const Port = process.env.PORT || 6060
+import dotenv from "dotenv";
 
 const app = express()
+
+//env configuration
+dotenv.config();
+
+//Port
+const PORT = process.env.PORT
 
 //middle wares
 app.use(express.json())
@@ -19,6 +22,6 @@ app.use('/',IndexRouter)
 dbConnection()
 
 //port listening server
-app.listen(Port,() => {
-    console.log(`Server listening from port ${Port}` )
+app.listen(PORT,() => {
+    console.log(`Server listening from port ${PORT}` )
 })

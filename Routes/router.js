@@ -12,8 +12,8 @@ const router = express.Router();
 
 router.post('/mentor/create',createMentor)
 router.post("/student/create",createStudent)
-router.post("/assignstudent/:id",assignStudent)
-router.post("/assignmentor/:id",assignMentor)
+router.put("/assignstudent/:id",assignStudent)
+router.put("/assignmentor/:id",assignMentor)
 router.get('/mentor/student/:id',mentorStudents)
 router.get('/mentor/previous/:id',previousMentor)
 

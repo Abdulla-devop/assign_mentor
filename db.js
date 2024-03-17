@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-const connectingString = 
-"mongodb+srv://Abdulla:Abdulla27@mentorassign.q1jkbft.mongodb.net/"
 
 // db connection
 export function dbConnection() {
@@ -9,7 +7,7 @@ export function dbConnection() {
         useUnifiedTopology:true,
     };
     try {
-        mongoose.connect(connectingString);
+        mongoose.connect(process.env.MONGO_URL);
         console.log("Database connected");
     } catch (error) {
         console.log("Error connecting database",error);
