@@ -5,7 +5,7 @@ import { dbConnection } from './db.js'
 
 
 //Port
-const Port = 6060
+const Port = process.env.PORT || 6060
 
 const app = express()
 
