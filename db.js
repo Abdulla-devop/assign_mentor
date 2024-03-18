@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv"
+dotenv.config()
+const connectionString = process.env.MONGO_URL
 
 // db connection
 export function dbConnection() {
@@ -7,7 +10,7 @@ export function dbConnection() {
         useUnifiedTopology:true,
     };
     try {
-        mongoose.connect(process.env.MONGO_URL);
+        mongoose.connect(connectionString);
         console.log("Database connected");
     } catch (error) {
         console.log("Error connecting database",error);
